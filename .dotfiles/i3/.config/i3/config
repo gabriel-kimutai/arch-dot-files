@@ -35,7 +35,6 @@ exec --no-startup-id dunst
 exec --no-startup-id mpd
 #exec --no-startup-id polybar -c "~/.config/polybar/shapes/config.ini" &
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id bash ~/kic
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -55,6 +54,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10% && $refresh_i3status
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10% && $refresh_i3status
 
+# KEY BINDS
+bindsym $alt+F3 exec thunar
+bindsym $alt+F2 exec firefox
+bindsym $alt+m exec --nostartup-id bash ~/kic
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -63,13 +66,11 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # kill focused window
-bindsym $mod+Shift+q kill
 
+bindsym $mod+Shift+q kill
 # start browser
-bindsym $mod+F2 exec firefox
 
 # start file manager
-bindsym $mod+F3 exec thunar
 
 # launch rofi
 bindsym $alt+space exec "rofi -modi drun,run,window -show drun"
@@ -232,9 +233,9 @@ bar {
 
 # Borders
         # Also removes all title bars
-        for_window [class="^.*"] border pixel 1
-        default_border pixel 1
-        default_floating_border pixel 1
+        for_window [class="^.*"] border pixel 2
+        default_border pixel 2
+        default_floating_border pixel 2
 
         # Hide borders at the edge of the screen
         hide_edge_borders smart
@@ -261,9 +262,9 @@ bar {
             # unfocused	    #333333	#222222	    #888888	#292d2e	    #222222
             # urgent	    #2f343a	#900000	    #ffffff	#900000	    #900000
             # placeholder	#000000	#0c0c0c	    #ffffff	#000000 	#0c0c0c
-        client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
+        client.focused           #f38ba8 #364A82 #c0caf5 #9aa5ce   #f38ba8
         client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
-        client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
+        client.unfocused         #16161d #16161d #c0caf5 #16161d   #94e2d5
 
 
 # Gaps
@@ -279,3 +280,9 @@ bar {
 
         # Hide gaps when there is only 1 window
         # smart_gaps on
+
+# WINDOW RULES
+
+    for_window [class="Vlc"] floating enable, border normal
+
+        

@@ -8,10 +8,10 @@ require("catppuccin").setup({
     nvimtree = {
       enabled = true,
       show_root = false,
-      transparent_panel = true,
+      transparent_panel = false,
     },
   },
-  transparent_background = true,
+  transparent_background = false,
   custom_highlights = {
     Comment = {fg = colors.lavender},
     LineNr = {fg = colors.lavender},

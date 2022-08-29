@@ -2,6 +2,8 @@ local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
 
+local coc_opts = {silent = true, expr = true, noremap = true}
+
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -24,6 +26,12 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+
+-- COC Keys
+keymap("i", "<TAB>", "pumvisible() ? 'C-n' : '<TAB>'", coc_opts)
+keymap("i", "S-TAB", "pumvisible() ? 'C-p' : 'C-h'", {noremap = true, expr = true})
+keymap("i", "<CR>", "coc#pum#visible() ? coc#pum#confirm() : '<CR>'", coc_opts)
+
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)

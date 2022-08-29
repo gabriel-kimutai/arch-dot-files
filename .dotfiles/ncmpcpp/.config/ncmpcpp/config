@@ -119,7 +119,7 @@ visualizer_color = blue, cyan, green, yellow, magenta, red
 ## Use unicode block characters for a smoother, more continuous look.
 ## This will override the visualizer_look option. With transparent terminals
 ## and visualizer_in_stereo set, artifacts may be visible on the bottom half of
-## the visualization.
+## the visualization.H
 #
 visualizer_spectrum_smooth_look = no
 #
