@@ -467,7 +467,7 @@ user_interface = alternative
 #
 #ask_before_clearing_playlists = yes
 #
-#clock_display_seconds = no
+clock_display_seconds = yes
 #
 #display_volume_level = yes
 #
@@ -590,9 +590,9 @@ colors_enabled = yes
 #
 #player_state_color = default:b
 #
-#alternative_ui_separator_color = black:b
+alternative_ui_separator_color = 124:b
 #
-#window_border_color = green
+window_border_color = 124
 #
 #active_window_border = red
 #

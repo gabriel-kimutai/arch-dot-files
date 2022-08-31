@@ -28,10 +28,9 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- COC Keys
-keymap("i", "<TAB>", "pumvisible() ? 'C-n' : '<TAB>'", coc_opts)
-keymap("i", "S-TAB", "pumvisible() ? 'C-p' : 'C-h'", {noremap = true, expr = true})
+keymap("i", "<TAB>", "coc#pum#visible() ? coc#pum#next(1) : '<TAB>'", coc_opts)
+keymap("i", "<S-TAB>", "coc#pum#visible() ? coc#pum#prev(1) : '<S-TAB>'", {noremap = true, expr = true})
 keymap("i", "<CR>", "coc#pum#visible() ? coc#pum#confirm() : '<CR>'", coc_opts)
-
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)

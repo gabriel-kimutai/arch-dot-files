@@ -181,7 +181,8 @@ bold_italic_font JetBrainsMono SemiBold Italic
 #: }}}
 
 #: Cursor customization {{{
-# cursor #cccccc
+
+cursor #cccccc
 
 #: Default cursor color. If set to the special value none the cursor
 #: will be rendered with a "reverse video" effect. It's color will be
@@ -190,7 +191,8 @@ bold_italic_font JetBrainsMono SemiBold Italic
 #: program running in the terminal sets a cursor color, this takes
 #: precedence. Also, the cursor colors are modified if the cell
 #: background and foreground colors have very low contrast.
-# cursor_text_color #111111
+
+cursor_text_color #111111
 
 #: The color of text under the cursor. If you want it rendered with
 #: the background color of the cell underneath instead, use the
@@ -1039,7 +1041,7 @@ inactive_tab_font_style bold
 
 #: The foreground and background colors.
 
-background_opacity 0.75
+background_opacity 1
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -2237,6 +2239,6 @@ shell_integration enabled no-cursor
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark Hard
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
