@@ -42,10 +42,14 @@ exec    --no-startup-id     picom -b --experimental-backends
 exec    --no-startup-id     dunst
 exec    --no-startup-id     mpd
 exec    --no-startup-id     nitrogen --restore
+
 exec    --no-startup-id     kitty --name="ncmpcpp" ncmpcpp
 exec    --no-startup-id     kitty --name="qt"
+exec    --no-startup-id     kitty --name="cal" cal
 
 exec    --no-startup-id     nm-applet
+
+exec    --no-startup-id     mailspring  --background
 
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
@@ -164,9 +168,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # Bring ncmpcpp to focus
 bindcode 67 [instance="ncmpcpp"] scratchpad show [instance="ncmpcpp"] move position center
 bindcode 68 [instance="qt"] scratchpad show [instance="qt"] move position center
+bindcode 96 [instance="cal"] scratchpad show [instance="cal"] move position 100 100 
+bindcode 70 [instance="mailspring"] scratchpad show [instance="mailspring"] move position center 
 
-# launch kitti3(dropdown terminal)
-bindsym $mod+n nop kitti3
+
 
 # launch filemanager
 bindsym $alt+F3 exec spacefm
@@ -197,13 +202,19 @@ for_window [instance="qt"] resize 700 400
 for_window [instance="qt"] floating enable
 
 # Start in separate workspace
-assign [class="Navigator"] $ws2
+assign [instance="Navigator"] $ws2
 for_window [title="File Upload"] floating enable
 for_window [title="File Upload"] resize 500 500
 
+# calender
+for_window [instance="cal"] move scratchpad
+for_window [instance="cal"] resize 200 200
+for_window [instance="cal"] floating enable
 
-
-
+# mailspring float
+for_window [class="Mailspring"] move scratchpad 
+for_window [class="Mailspring"] floating enable
+for_window [class="Mailspring"] resize set 1000 600 
 
 # MODES
 

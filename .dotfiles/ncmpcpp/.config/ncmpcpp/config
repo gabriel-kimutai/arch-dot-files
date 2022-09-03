@@ -399,7 +399,7 @@ user_interface = alternative
 ## Show the "Connected to ..." message on startup
 #connected_message_on_startup = yes
 #
-#titles_visibility = yes
+titles_visibility = yes
 #
 #header_text_scrolling = yes
 #
@@ -590,7 +590,7 @@ colors_enabled = yes
 #
 #player_state_color = default:b
 #
-alternative_ui_separator_color = 124:b
+alternative_ui_separator_color = 24:b
 #
 window_border_color = 124
 #
