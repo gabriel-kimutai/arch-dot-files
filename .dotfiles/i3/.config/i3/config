@@ -36,20 +36,19 @@ font pango:JetBrains Mono 8
 
 # Workspace names
 exec_always    --no-startup-id    exec python3 -m i3_workspace_names_daemon
+exec_always    --no-startup-id    exec syndaemon -K -i 0.5 -R -d
 
-exec    --no-startup-id     kitti3 
 exec    --no-startup-id     picom -b --experimental-backends 
 exec    --no-startup-id     dunst
 exec    --no-startup-id     mpd
+exec    --no-startup-id     mpDris2
 exec    --no-startup-id     nitrogen --restore
 
 exec    --no-startup-id     kitty --name="ncmpcpp" ncmpcpp
 exec    --no-startup-id     kitty --name="qt"
-exec    --no-startup-id     kitty --name="cal" cal
 
 exec    --no-startup-id     nm-applet
 
-exec    --no-startup-id     mailspring  --background
 
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
@@ -166,18 +165,16 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Scratchpads
 # Bring ncmpcpp to focus
-bindcode 67 [instance="ncmpcpp"] scratchpad show [instance="ncmpcpp"] move position center
-bindcode 68 [instance="qt"] scratchpad show [instance="qt"] move position center
-bindcode 96 [instance="cal"] scratchpad show [instance="cal"] move position 100 100 
-bindcode 70 [instance="mailspring"] scratchpad show [instance="mailspring"] move position center 
+bindsym $alt+m [instance="ncmpcpp"] scratchpad show [instance="ncmpcpp"] move position center
+bindsym $alt+t [instance="qt"] scratchpad show [instance="qt"] move position center
 
 
 
 # launch filemanager
-bindsym $alt+F3 exec spacefm
+bindsym $alt+f exec spacefm
 
 # launch browser
-bindsym $alt+F2 exec firefox
+bindsym $alt+b exec firefox
 
 # launch rofi
 bindsym $alt+space exec "rofi -modi drun,run,window -show drun"
@@ -202,19 +199,11 @@ for_window [instance="qt"] resize 700 400
 for_window [instance="qt"] floating enable
 
 # Start in separate workspace
-assign [instance="Navigator"] $ws2
+assign     [instance="Navigator"] $ws2
 for_window [title="File Upload"] floating enable
 for_window [title="File Upload"] resize 500 500
+for_window [instance="Navigator"] focus
 
-# calender
-for_window [instance="cal"] move scratchpad
-for_window [instance="cal"] resize 200 200
-for_window [instance="cal"] floating enable
-
-# mailspring float
-for_window [class="Mailspring"] move scratchpad 
-for_window [class="Mailspring"] floating enable
-for_window [class="Mailspring"] resize set 1000 600 
 
 # MODES
 
@@ -247,14 +236,13 @@ mode "resize" {
 # BAR
 
 bar {
- #i3bar_command i3bar --transparency
-  tray_padding 0
+  # i3bar_command i3bar --transparency
+  font pango:JetBrainsMono Nerd Font 8
   height 20
+  tray_padding 3
   workspace_buttons yes
 	position bottom
-       status_command ~/.config/i3/bumblebee-status/bumblebee-status \
-			-t gruvbox-powerline \
-			-m amixer datetime brightness battery 
+	status_command i3status-rs
 	colors {
 		#background #20242c
 		background #32302f
