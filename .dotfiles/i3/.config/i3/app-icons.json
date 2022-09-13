@@ -1,0 +1,18 @@
+{
+  "firefox": "<span font_desc='file-icons' foreground='orange'>\ue645</span> Firefox",
+  "kitty": "<span font_desc='file-icons' foreground='brown'>\ue695</span> Kitty",
+  "code": "<span font_desc='file-icons' foreground='#3faaf2'>\ueb22</span> Code",
+  "telegramdesktop": "<span font_desc='fontawesome' foreground='skyblue'>\uf2c6</span> Telegram",
+  "nvidia-settings": "<span font_desc='file-icons' foreground='#6be51a'>\ue95d</span>",
+  "inkscape": "<span font_desc='file-icons' foreground='#ffffff'>\uea8e</span> Inkscape",
+  "subl": "<span font_desc='file-icons' foreground='#ee922e'>\ue986</span> Sublime",
+  "font-manager": "<span font_desc='file-icons' foreground='#ffffff'>\ueaab</span>",
+  "blender": "<span font_desc='file-icons' foreground='yellow'>\ue9fa</span>",
+  "thunar": "<span font_desc='fontawesome' foreground='pink'>\uf07c</span>",
+  "mpv": "<span font_desc='file-icons' foreground='purple'>\uf148</span>",
+  "virt-manager": "<span font_desc='file-icons' foreground='#ffffff'>\uea3e</span>",
+  "mailspring": "<span font_desc='fontawesome' foreground='#ffffff'>\uf0e0</span> Mailspring",
+  "spacefm": "<span font_desc='fontawesome' foreground='#ffffff'>\uf07b</span> Spacefm",
+  "nvim": "<span font_desc='file-icons' foreground='#b8bb2c'>\ue6c5</span> Neovim",
+  "nv": "<span font_desc='file-icons' foreground='#b8bb2c'>\ue6c5</span> Neovim"
+}
