@@ -204,6 +204,9 @@ for_window [title="File Upload"] floating enable
 for_window [title="File Upload"] resize 500 500
 for_window [instance="Navigator"] focus
 
+# start Spotify in floating mode
+for_window [instance="Spotify"] floating enable
+for_window [instance="Spotify"] focus
 
 # MODES
 
